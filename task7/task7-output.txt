@@ -1,0 +1,10 @@
+kubectl expose deploy flask-application --port=5000 --target-port=5000 --type=NodePort
+
+-----------
+
+
+kubectl exec nginx -- curl flask-application:5000/load-capability
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0{"cpus":"1","memorys":"134217728"}
+100    35  100    35    0     0   3888      0 --:--:-- --:--:-- --:--:--  4375

@@ -1,0 +1,5 @@
+kubectl run busybox-echo --image=busybox --command -- sh -c "echo 'Hello World'" && exit 0
+
+-------------------
+ kubectl logs busybox-echo                                                                 
+Hello World

@@ -1,0 +1,11 @@
+apiVersion: v1
+data:
+  http_port: 80
+  message: hello world
+kind: ConfigMap
+metadata:
+  creationTimestamp: 2025-04-01T16:45:36Z
+  name: practice
+  namespace: p-jamshid
+  resourceVersion: 16976423
+  uid: 45d3f665-b7e3-4584-8ecc-6d91f3fb7628

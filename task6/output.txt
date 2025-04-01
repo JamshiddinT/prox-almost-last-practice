@@ -1,0 +1,3 @@
+ curl -s http://localhost:5000/domain
+{domain:localhost:5000,endpoint:/domain,log_level:debug}
+➜  ~ 

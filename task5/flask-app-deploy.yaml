@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: flask-application
+  name: flask-application
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: flask-application
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: flask-application
+    spec:
+      containers:
+      - image: visionindark/flask-app:prac-v1
+        name: flask-app
+        resources:
+          requests:
+            cpu: "200m"
+            memory: "128Mi"
+        env:
+          - name: CPU
+            valueFrom: 
+              resourceFieldRef:
+                containerName: flask-app
+                resource: requests.cpu
+          - name: MEMORY 
+            valueFrom: 
+              resourceFieldRef:
+                containerName: flask-app
+                resource: requests.memory
+        livenessProbe:
+          httpGet:
+            path: /domain
+            port: 80
+          initialDelaySeconds: 5
+          periodSeconds: 10
+status: {}
